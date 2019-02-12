@@ -8,6 +8,7 @@ markdown: kramdown
 disqus: dbyll
 google_analytics: dbyll
 title: dbyll
+#comments: true
 
 url: "https://yashk2000.github.io"
 baseurl: "/myblog"
@@ -21,12 +22,12 @@ defaults:
 
 description: Stylish Jekyll Theme
 author:
-  name: dbyll
-  email: dbyll@ismaildemirbilek.com
-  github: dbtek
-  twitter: dbtek
+  name: Yash Khare
+  email: yashsja@gmail.com
+  github: https://github.com/yashk2000
+  twitter: https://twitter.com/_p0lar_bear
   pinterest: asd123
-  linkedin: asd123
+  linkedin: https://www.linkedin.com/in/yash-khare-b2385a178/
   bio: Your stylish, minimalist theme!
   email_md5: 726351295ec82e145928582f595aa3aa
 
