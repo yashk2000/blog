@@ -9,7 +9,8 @@ disqus: dbyll
 google_analytics: dbyll
 title: dbyll
 
-
+url: "https://yashk2000.github.io"
+baseurl: "/myblog"
 
 defaults:
   -
