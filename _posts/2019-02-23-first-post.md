@@ -5,6 +5,7 @@ categories: [general, setup, demo]
 tags: [demo, dbyll, dbtek, setup]
 fullview: false
 comments: true
+image: https://raw.githubusercontent.com/yashk2000/myblog/gh-pages/images/High-Resolution-Guitar-Wallpapers-Screen.jpg
 ---
 
 If you want to play the guitar you have to concentrate on what you practice and the way you practice it. Being a good guitarist means being exciting, interesting, passionate and musical. Whether you’ve been playing guitar for years, or you’re just getting started, no one is perfect and everyone can improve. Following are some ways to improve your skills.

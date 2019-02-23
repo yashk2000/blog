@@ -4,6 +4,13 @@ body{
 	color: #2c3e50;
 }
 
+img {
+  display: block;
+  max-width: 60%;
+  margin: 0 0 1rem;
+  border-radius: 5px;
+}
+
 .sidebar {
 	position: fixed;
 	top: 0px;
@@ -188,4 +195,3 @@ footer {
 ul.dropdown-menu>li>a>i.fa {
     width: 1.3em;
 }
-
