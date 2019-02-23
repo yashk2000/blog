@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Tips to Improve Your Guitar Playing
-categories: [general, setup, demo]
-tags: [demo, dbyll, dbtek, setup]
+categories: [general, miscellanious]
+tags: [guitar, skills, extra-curricular]
 fullview: false
 comments: true
 image: https://raw.githubusercontent.com/yashk2000/myblog/gh-pages/images/High-Resolution-Guitar-Wallpapers-Screen.jpg
