@@ -25,7 +25,7 @@ sudo apt install git
 
 Getting started :
 
-Now with Git on your system, you’ll want to do a few things to customise your Git environment. Git comes with a tool : git config. It helps you control how Git looks and operates. The first step is setting up your name and email.
+Now with Git on your system, you’ll want to do a few things to customise your Git environment. Git comes with a tool : `git config`. It helps you control how Git looks and operates. The first step is setting up your name and email.
 ```git
 git config –global user.name “yashk2000”
 
