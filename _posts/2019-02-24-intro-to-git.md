@@ -45,8 +45,8 @@ You can also check what Git thinks a specific key’s value is by typing : git c
 ```git
 git config user.name
 
-```Yash Khare
-
+Yash Khare
+```
 
 Now your Git is set up and you can move on to learning some basic commands.
 
