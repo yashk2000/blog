@@ -4,7 +4,7 @@ title: Making a simple coffee ordering app
 categories: [technical, basic, beginners]
 tags: [java, android, android studio]
 fullview: false
-comments: true
+comments: false
 image: https://raw.githubusercontent.com/yashk2000/myblog/gh-pages/images/git-logo.png
 ---
 
