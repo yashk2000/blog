@@ -5,22 +5,28 @@ categories: [technical, basic, beginners]
 tags: [java, android, android studio]
 fullview: false
 comments: true
-image: https://raw.githubusercontent.com/yashk2000/myblog/gh-pages/images/git-logo.png
+image: https://raw.githubusercontent.com/yashk2000/myblog/gh-pages/images/coffee2.jpeg
 ---
 
 In this blog, I’ll teach you how to make a simple coffee ordering app. You can enter the details of coffee in the app and then send it using e-mail to a shop. The app will finally look like :
 
-screencap.png
+<p align="center">
+  <img src="https://raw.githubusercontent.com/yashk2000/myblog/gh-pages/images/coffeeb1.png" alt="">
+</p>
 
 To get started you need Android Studio installed in your computer and an Android phone to test the app on. If you don’t have an android phone you can use the Android Studio emulators.
 
 Let’s start. First, you have to create a new Android Studio project.
 
-Screenshot from 2018-12-19 23-04-58.png
+<p align="center">
+  <img src="https://raw.githubusercontent.com/yashk2000/myblog/gh-pages/images/coffeeb2.png" alt="">
+</p>
 
 Keep clicking next. When you are asked to chose an activity for your app, chose “Empty Activity”. Then proceed further, click finish and you have a screen which looks like this :
 
-Screenshot from 2018-12-19 23-08-36.png
+<p align="center">
+  <img src="https://raw.githubusercontent.com/yashk2000/myblog/gh-pages/images/coffeeb3.png" alt="">
+</p>
 
 This is the xml file. You can view the Text portion of the file by clicking on the Text button next to the design button. The xml file is basically the design file. All the different things that you see in an app are in the xml file. The function of the buttons and other views in an xml file are defined in Java classes. These Java classes are generally called activities.
 
@@ -336,6 +342,13 @@ public class MainActivity extends AppCompatActivity {
 ```
 Congratulations!! You just made an app to order coffee. Now build the app and test it on an Android device or Emulator. When you click the order button, a mail is opened.
 
-screencap11.pngscreencap1.png
+<p align="center">
+  <img src="https://raw.githubusercontent.com/yashk2000/myblog/gh-pages/images/coffeeb4.png" alt="">
+</p>
+
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/yashk2000/myblog/gh-pages/images/coffeeb5.png" alt="">
+</p>
 
 Thank you for reading the blog. Hope you liked it!! All the best in making bigger and better apps.
