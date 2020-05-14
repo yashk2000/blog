@@ -2,7 +2,7 @@ import React from 'react';
 
 import { StyledSocial } from './StyledSocial';
 
-import { FaTwitter, FaFacebook, FaBehance, FaGithub } from 'react-icons/fa';
+import { FaTwitter, FaGithub } from 'react-icons/fa';
 
 const Social = () => {
   return (
