@@ -38,11 +38,12 @@ const queries = [
 ];
 
 module.exports = {
+  pathPrefix: `/blog`,
   siteMetadata: {
     title: `Yash´s Blog`,
     description: `This is my website and blog`,
     author: `Yash Khare`,
-    siteUrl: `https://yashk2000.github.io`,
+    siteUrl: `https://yashk2000.github.io/`,
     social: {
       twitter: `_p0lar_bear`,
       github: `yashk2000`,
