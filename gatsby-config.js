@@ -137,6 +137,13 @@ module.exports = {
             },
           },
           {
+            resolve: `gatsby-plugin-google-analytics`,
+            options: {
+              // replace with your own Tracking ID
+              trackingId: "UA-166796928-1",
+            },
+          },
+          {
             resolve: `gatsby-remark-embed-video`,
             options: {
               width: 800,

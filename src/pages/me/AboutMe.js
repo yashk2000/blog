@@ -222,7 +222,6 @@ const AboutMe = () => (
       <Layout>
         <Wrapper>
           <StyledTriangle>
-            {` `}
             <Img fluid={data.profileImage.childImageSharp.fluid} alt="A picture of myself" />
           </StyledTriangle>
           <StyledMainInformation>
