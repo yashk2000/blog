@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://yashk2000.github.io/blog/gsoc20-summary-of-work-done</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://yashk2000.github.io/blog/gsoc20-coding-period-three</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://yashk2000.github.io/blog/ai-singapore-summer-school</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://yashk2000.github.io/blog/gsoc20-coding-period-2</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://yashk2000.github.io/blog/gsoc20-coding-period-one</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -21,5 +23,7 @@
 <url> <loc>https://yashk2000.github.io/blog/posts/17-09-2018-collaborating-with-git/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://yashk2000.github.io/blog/posts/18-08-2020-ai-singapore-summer-school/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://yashk2000.github.io/blog/posts/20-12-2018-coffee-ordering-app/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://yashk2000.github.io/blog/posts/29-08-2020-período-de-codificación-Tres/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://yashk2000.github.io/blog/posts/30-08-2020-resumen-del-trabajo-realizado/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://yashk2000.github.io/blog/posts/31-05-2020-período-de-unión-comunitaria/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
