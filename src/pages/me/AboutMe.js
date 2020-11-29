@@ -188,7 +188,7 @@ const calculateAge = birthday => {
   // birthday is a date
   const ageDifMs = Date.now() - birthday.getTime();
   const ageDate = new Date(ageDifMs); // miliseconds from epoch
-  return Math.abs(ageDate.getUTCFullYear() - 1970);
+  return Math.abs(ageDate.getUTCFullYear() - 1970) + 1;
 };
 
 const AboutMe = () => (
@@ -228,7 +228,7 @@ const AboutMe = () => (
             <StyledH1>Yash Khare</StyledH1>
             <StyledSpan>That`s me 😀</StyledSpan>
             <StyledListTriangle>
-              <li> {calculateAge(new Date(2000, 11, 12))} years old</li>
+              <li> {calculateAge(new Date(2000, 11, 12))} years old (this age is calculated by a piece of code in this website.)</li>
               <li> Living in India</li>
               <li> Student at Amrita Vishwa Vidyapeetham</li>
               <li> Member and mentor @amFOSS</li>
