@@ -1,4 +1,1 @@
 User-agent: *
-Allow: /
-Sitemap: https://yashk2000.github.io/sitemap.xml
-Host: https://yashk2000.github.io

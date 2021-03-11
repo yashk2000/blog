@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack:///./src/pages/home/index.js"],"names":["Home"],"mappings":"8FAAA,uBAEeA,YAAf","file":"component---src-pages-home-index-js-bad923196cf95a0cc428.js","sourcesContent":["import Home from './Home';\n\nexport default Home;\n"],"sourceRoot":""}
