@@ -1,0 +1,2 @@
+# Redirect alternative domains to primary domain
+https://yashk2000.github.io/blog/* https://yashkhare.me/:splat 301!

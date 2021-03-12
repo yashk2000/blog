@@ -1,214 +1,250 @@
-const { PUBLISH_ON_NOW } = process.env;
-
-require(`dotenv`).config({
-  path: `.env.${process.env.NODE_ENV}`,
-});
-
-const postQuery = `{
-  posts: allMdx(
-    filter: { fileAbsolutePath: { regex: "/posts/" } }
-  ) {
-    edges {
-      node {
-        objectID: id
-        frontmatter {
-          title
-          path
-          excerpt
-          date(formatString: "MMM D, YYYY")
-          tags
-        }
-      }
-    }
-  }
-}`;
-const flatten = (arr) =>
-  arr.map(({ node: { frontmatter, ...rest } }) => ({
-    ...frontmatter,
-    ...rest,
-  }));
-const settings = { attributesToSnippet: [`excerpt:20`] };
-const queries = [
-  {
-    query: postQuery,
-    transformer: ({ data }) => flatten(data.posts.edges),
-    indexName: process.env.ALGOLIA_INDEX_NAME,
-    settings,
-  },
-];
+require("dotenv").config();
+const config = require("./content/meta/config");
 
 module.exports = {
   pathPrefix: `/blog`,
+
   siteMetadata: {
-    title: `Yash´s Blog`,
-    description: `This is my website and blog`,
-    author: `Yash Khare`,
-    siteUrl: `https://yashk2000.github.io/`,
-    social: {
-      twitter: `_p0lar_bear`,
-      github: `yashk2000`,
-    },
+    title: config.siteTitle,
+    description: config.siteDescription,
+    siteUrl: config.siteUrl,
+    plausibleDomain: process.env.PLAUSIBLE_DOMAIN || "",
+    contactPostAddress: process.env.CONTACT_POST_ADDRESS || "",
+    emailSubLink: process.env.EMAIL_SUB_LINK || "https://app.mailjet.com/widget/iframe/6x6R/HTG",
   },
   plugins: [
+    `gatsby-plugin-styled-jsx`, // the plugin's code is inserted directly to gatsby-node.js and gatsby-ssr.js files
+    `gatsby-plugin-styled-jsx-postcss`, // as above
     {
-      resolve: `gatsby-plugin-robots-txt`,
+      resolve: `gatsby-plugin-typescript`,
       options: {
-        resolveEnv: () => PUBLISH_ON_NOW,
-        env: {
-          production: {
-            policy: [{ userAgent: `*` }],
-          },
-          'branch-deploy': {
-            policy: [{ userAgent: `*`, disallow: [`/`] }],
-            sitemap: null,
-            host: null,
-          },
-        },
-      },
-    },
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-styled-components`,
-    {
-      resolve: `gatsby-plugin-webpack-bundle-analyzer`,
-      options: {
-        production: true,
-        disable: !process.env.ANALYZE_BUNDLE_SIZE,
-        generateStaticFile: true,
-        analyzerMode: `static`,
-      },
-    },
-    `gatsby-plugin-sitemap`,
-    `gatsby-plugin-eslint`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Yash´s personal website`,
-        short_name: `yashk2000`,
-        start_url: `/`,
-        background_color: `#FFF`,
-        theme_color: `#50E3C2`,
-        // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
-        // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
-        display: `standalone`,
-        icon: `src/assets/images/icon.jpg`, // This path is relative to the root of the site.
+        isTSX: true, // defaults to false
+        //jsxPragma: `jsx`, // defaults to "React" ??
+        allExtensions: true
       },
     },
     {
-      resolve: `gatsby-plugin-offline`,
-    },
-    `gatsby-plugin-svgr`,
-    {
-      resolve: `gatsby-plugin-react-svg`,
+      resolve: `gatsby-plugin-google-analytics`,
       options: {
-        rule: {
-          include: /assets/,
-        },
+        // replace with your own Tracking ID
+        trackingId: "UA-166796928-1",
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/pages`,
-        name: `pages`,
-      },
+      resolve: `gatsby-plugin-layout`,
+      options: { 
+        component: require.resolve(`./src/layouts/`)
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/assets/images`,
-      },
+        path: `${__dirname}/src/images/`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/${process.env.POSTS_FOLDER || 'mock_posts'}/`,
+        name: "posts"
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/pages/`,
+        name: "pages"
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `parts`,
+        path: `${__dirname}/content/parts/`
+      }
     },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
           {
-            resolve: `gatsby-remark-images`,
-            options: {
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
-              maxWidth: 2024,
-              quality: 1000,
-              withWebp: true,
-            },
+            resolve: "gatsby-remark-component-parent2div",
+            options: { components: ["re-icons", "re-img", "re-tracedsvg-gallery"] }
           },
-          {
-            resolve: `gatsby-plugin-google-analytics`,
-            options: {
-              // replace with your own Tracking ID
-              trackingId: "UA-166796928-1",
-            },
-          },
-          {
-            resolve: `gatsby-remark-embed-video`,
-            options: {
-              width: 800,
-              ratio: 1.77, // Optional: Defaults to 16/9 = 1.77
-              height: 400, // Optional: Overrides optional.ratio
-              related: false, //Optional: Will remove related videos from the end of an embedded YouTube video.
-              noIframeBorder: true, //Optional: Disable insertion of <style> border: 0
-            },
-          },
-          {
-            resolve: `gatsby-remark-responsive-iframe`,
-            options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
-          },
-          `gatsby-remark-autolink-headers`,
-          `gatsby-remark-prismjs`,
-          `gatsby-remark-smartypants`,
-          `gatsby-remark-autolink-headers`,
-        ],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: `UA-134206784-1`,
-      },
-    },
-    `gatsby-transformer-json`,
-    {
-      resolve: `gatsby-plugin-mdx`,
-      options: {
-        gatsbyRemarkPlugins: [
+          `gatsby-plugin-sharp`,
           {
             resolve: `gatsby-remark-images`,
             options: {
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
-              maxWidth: 2024,
-              withWebp: true,
-            },
+              maxWidth: 800,
+              quality: 100,
+              backgroundColor: "transparent",
+              tracedSVG: { color: '#f9ebd2' }
+            }
           },
           {
-            resolve: `gatsby-remark-embed-video`,
+            resolve: `gatsby-remark-rehype-images`,
             options: {
-              width: 800,
-              ratio: 1.77, // Optional: Defaults to 16/9 = 1.77
-              height: 400, // Optional: Overrides optional.ratio
-              related: false, //Optional: Will remove related videos from the end of an embedded YouTube video.
-              noIframeBorder: true, //Optional: Disable insertion of <style> border: 0
-            },
+              tag: 're-img',
+              maxWidth: 800,
+              quality: 100,
+              tracedSVG: { color: '#f9ebd2' },
+              generateTracedSVG: true
+            }
           },
+
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
+              wrapperStyle: `margin-bottom: 2em`
+            }
           },
           `gatsby-remark-prismjs`,
+          `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
-        ],
-        extensions: [`.mdx`, `.md`],
-        default: require.resolve(`./src/components/Layout/Layout.js`),
-      },
+          {
+            resolve: "gatsby-remark-emojis",
+            options: {
+              // Deactivate the plugin globally (default: true)
+              active: true,
+              // Add a custom css class
+              class: "emoji-icon",
+              // Select the size (available size: 16, 24, 32, 64)
+              size: 64,
+              // Add custom styles
+              styles: {
+                display: "inline",
+                margin: "0",
+                "margin-top": "1px",
+                position: "relative",
+                top: "5px",
+                width: "25px"
+              }
+            }
+          }
+        ]
+      }
     },
-  ],
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: config.manifestName,
+        short_name: config.manifestShortName,
+        start_url: config.manifestStartUrl,
+        background_color: config.manifestBackgroundColor,
+        theme_color: config.manifestThemeColor,
+        display: config.manifestDisplay,
+        icons: [
+          {
+            src: "/icons/icon-48x48.png",
+            sizes: "48x48",
+            type: "image/png"
+          },
+          {
+            src: "/icons/icon-96x96.png",
+            sizes: "96x96",
+            type: "image/png"
+          },
+          {
+            src: "/icons/icon-144x144.png",
+            sizes: "144x144",
+            type: "image/png"
+          },
+          {
+            src: "/icons/icon-192x192.png",
+            sizes: "192x192",
+            type: "image/png"
+          },
+          {
+            src: "/icons/icon-256x256.png",
+            sizes: "256x256",
+            type: "image/png"
+          },
+          {
+            src: "/icons/icon-384x384.png",
+            sizes: "384x384",
+            type: "image/png"
+          },
+          {
+            src: "/icons/icon-512x512.png",
+            sizes: "512x512",
+            type: "image/png"
+          }
+        ]
+      }
+    },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  date: edge.node.fields.prefix,
+                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  custom_elements: [{ "content:encoded": edge.node.html }]
+                });
+              });
+            },
+            query: `
+              {
+                allMarkdownRemark(
+                  limit: 1000,
+                  sort: { order: DESC, fields: [fields___prefix] },
+                  filter: {
+                    fields: {
+                      prefix: { regex: "/[0-9]{4}.*/" },
+                      slug: { ne: null }
+                    }
+                  }
+                ) {
+                  edges {
+                    node {
+                      excerpt
+                      html
+                      fields {
+                        slug
+                        prefix
+                      }
+                      frontmatter {
+                        title
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/rss.xml"
+          }
+        ]
+      }
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        include: /svg-icons/
+      }
+    }
+  ]
 };

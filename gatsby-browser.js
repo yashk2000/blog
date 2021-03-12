@@ -1,7 +1,17 @@
-import React from 'react';
-import Transition from './src/components/Transition';
-import 'typeface-raleway';
+/**
+ * Implement Gatsby's Browser APIs in this file.
+ *
+ * See: https://www.gatsbyjs.org/docs/browser-apis/
+ */
 
-export const wrapPageElement = ({ element, props }) => {
-  return <Transition {...props}>{element}</Transition>;
-};
+import React from "react"
+
+import { GlobalState } from "./src/components/GlobalState/GlobalState.js"
+
+export const wrapRootElement = ({ element }) => {
+    return (
+        <GlobalState>
+            {element}
+        </GlobalState>
+    )
+}
