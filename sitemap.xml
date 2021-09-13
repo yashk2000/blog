@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://yashkhare.me/blog/blog/tag/daily/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://yashkhare.me/blog/blog/tag/daily-prebuilt/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://yashkhare.me/blog/blog/tag/demo/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://yashkhare.me/blog/blog/tag/raise-hand/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://yashkhare.me/blog/blog/tag/reinforcement-learning/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://yashkhare.me/blog/blog/tag/ml-from-scratch/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://yashkhare.me/blog/blog/tag/major-league-hacking-fellowship/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -20,6 +24,7 @@
 <url> <loc>https://yashkhare.me/blog/blog/tag/github/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://yashkhare.me/blog/blog/tag/kwoc/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://yashkhare.me/blog/blog/tag/java/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://yashkhare.me/blog/blog/add-a-raise-hand-section-for-meeting-participants-in-any-daily-video-chat-app/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://yashkhare.me/blog/blog/rendering-openai-gym-envs-in-colab/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://yashkhare.me/blog/blog/descending-deeper-into-gradient-descent/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://yashkhare.me/blog/blog/learning/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
