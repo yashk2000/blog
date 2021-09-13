@@ -11,7 +11,7 @@ author: Yash Khare
 
 </center>
 
-Recently I started exploring reinforcement learning. I am currently following the book, [Deep Reinforcement Learning in Action](https://www.manning.com/books/deep-reinforcement-learning-in-action). Now most courses, or book will uses the [openAI Gym](https://gym.openai.com/). The issue you'll run into here would be how to render these gym environments while using Google Colab. In this blog post, I will discuss a few solutions that I came across using which you can easily render gym environments in remote servers and continue using Colab for your work. 
+Recently I started exploring reinforcement learning. I am currently following the book, [Deep Reinforcement Learning in Action](https://www.manning.com/books/deep-reinforcement-learning-in-action). Now most courses, or books will use the [openAI Gym](https://gym.openai.com/). The issue you'll run into here would be how to render these gym environments while using Google Colab. In this blog post, I will discuss a few solutions that I came across using which you can easily render gym environments in remote servers and continue using Colab for your work. 
 
 ## Method 1: Render the environment using matplotlib
 
